@@ -5,15 +5,16 @@ main {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin: 0 auto;
+    margin: 100px auto 0;
     box-shadow: 0 0 10px rgba(153, 0, 153);
     background-color: white;
     font-family: "Iosevka Charon", monospace;
 
 }
 
-h1 {
+#welcome h1 {
     font-family: "Pacifico", cursive;
+    color: rgba(204, 0, 102);
 
 }
 
@@ -31,3 +32,59 @@ h1 {
     filter: blur(8px);  
     z-index: -1;        
   }
+
+  #start-btn {
+    background-color: #ff4d6d;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    font-size: 18px;
+    font-family: "Iosevka Charon", monospace;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#start-btn:hover {
+    background-color: #e63950;
+    transform: translateY(-2px);
+}
+
+/* Navbar container */
+.navbar {
+    background-color: white;
+    align-items: center;      /* vertically center logo + links */
+    justify-content: space-between;  /* logo left, links right */
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.navbar .logo {
+    height: 50px;           /* adjust to your taste */
+}
+
+/* Remove default list styling */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* center the links */
+    gap: 40px; /* space between links */
+}
+
+/* Links */
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Iosevka Charon", monospace;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    color: #ff4d6d;
+}
