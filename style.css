@@ -4,13 +4,14 @@
 
 .option {
     display: block;
-    background: pink;
+    background: rgba(255,236,236);
     padding: 10px;
-    margin: 8px 0;
-    border-radius: 8px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #333;
     cursor: pointer;
     transition: 0.2s;
-    font-family: "Iosevka Charon", monospace;
 }
 
 .option:hover {
@@ -25,6 +26,32 @@ main {
     box-shadow: 0 0 10px rgba(153, 0, 153);
     background-color: white;
     font-family: "Iosevka Charon", monospace;
+}
+
+
+.navbar {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none; /* removes bullets */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li a {
+    display: block;
+    color: rgba(204, 0, 102);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Iosevka Charon", monospace;
+}
+
+.navbar li a:hover {
+    background-color: #111;
 }
 
 #welcome h1 {
@@ -105,8 +132,7 @@ main {
 }
 
 .result-content img {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     object-fit: cover; /* prevents weird stretching */
-    border-radius: 50%; /* makes it circular */
   }

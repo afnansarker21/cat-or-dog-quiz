@@ -191,11 +191,11 @@ const quizData = [
     const animalInfo = {
         Dog: {
             img: "image/dog.jpg",
-            description: "Dogs are loyal, friendly, and loving companions. You enjoy being social and dependable."
+            description: "You are someone who is very energetic, resilient and enjoy being around others! We believe getting a dog is the best choice for your first pet."
         },
         Cat: {
             img: "image/cat.jpg",
-            description: "Cats are calm, independent, and clever. You value freedom and are fearless in pursuit of goals."
+            description: "You are someone who is creative, calm and enjoy building deep bonds! We believe getting a cat is the best choice for your first pet."
         }
     };
     
@@ -236,7 +236,7 @@ const quizData = [
     
         resultDiv.innerHTML = `
             <div class="result-content">
-                <h2>You got ${chosenAnimal}!</h2>
+                <h2>You should get a ${chosenAnimal}!</h2>
                 <img src="${info.img}" alt="${chosenAnimal}">
                 <p>${info.description}</p>
                 <button id="restart-btn">Start Again</button>
