@@ -1,24 +1,36 @@
+.hidden {
+    display: none;
+}
+
+.option {
+    display: block;
+    background: pink;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: "Iosevka Charon", monospace;
+}
+
+.option:hover {
+    background: #d0d0d0;
+}
+
 main {
     width: 300px;
     padding: 50px;
-    margin: 20px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
     margin: 100px auto 0;
     box-shadow: 0 0 10px rgba(153, 0, 153);
     background-color: white;
     font-family: "Iosevka Charon", monospace;
-
 }
 
 #welcome h1 {
     font-family: "Pacifico", cursive;
     color: rgba(204, 0, 102);
-
 }
-
-
 
 .background {
     position: fixed;
@@ -31,15 +43,14 @@ main {
     background-position: center;
     filter: blur(8px);  
     z-index: -1;        
-  }
+}
 
-  #start-btn {
+#start-btn {
     background-color: #ff4d6d;
     color: white;
     padding: 14px 24px;
     border: none;
     font-size: 18px;
-    font-family: "Iosevka Charon", monospace;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
@@ -50,37 +61,52 @@ main {
     transform: translateY(-2px);
 }
 
-/* Navbar container */
-.navbar {
-    background-color: white;
-    align-items: center;      /* vertically center logo + links */
-    justify-content: space-between;  /* logo left, links right */
-    padding: 15px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.result-content {
+    text-align: center;
+    padding: 20px;
 }
 
-
-/* Remove default list styling */
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* center the links */
-    gap: 40px; /* space between links */
-}
-
-/* Links */
-.navbar a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: "Iosevka Charon", monospace;
-    transition: all 0.3s ease;
-}
-
-/* Hover effect */
-.navbar a:hover {
+.result-content h2 {
+    font-size: 28px;
     color: #ff4d6d;
+    margin-bottom: 15px;
+    font-family: "Pacifico", cursive;
 }
+
+.result-content img {
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.result-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.result-content button {
+    background-color: #ff4d6d;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.result-content button:hover {
+    background-color: #e63950;
+    transform: translateY(-2px);
+}
+
+.result-content img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* prevents weird stretching */
+    border-radius: 50%; /* makes it circular */
+  }

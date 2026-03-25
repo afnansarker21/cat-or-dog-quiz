@@ -147,7 +147,7 @@ const quizData = [
         options: [
         { text: "Country town", animal: "Dog"},
         { text: "Eco-Focused or Mountain Towns", animal: "Dog"},
-        { text: "Regional cities", animal: "Cats"},
+        { text: "Regional cities", animal: "Cat"},
         { text: "City life", animal: "Dog"},
         { text: "Normal suburban place", animal: "Cat"},
         
@@ -177,16 +177,77 @@ const quizData = [
                                         
         ]
                                 
-     },
+     }
+    ];
 
-
+    let currentQuestion = 0;
+    const scores = { Dog: 0, Cat: 0 };
     
-
+    const startBtn = document.getElementById("start-btn");
+    const startScreen = document.getElementById("welcome");
+    const quiz = document.getElementById("quiz");
+    const resultDiv = document.getElementById("result");
     
+    const animalInfo = {
+        Dog: {
+            img: "image/dog.jpg",
+            description: "Dogs are loyal, friendly, and loving companions. You enjoy being social and dependable."
+        },
+        Cat: {
+            img: "image/cat.jpg",
+            description: "Cats are calm, independent, and clever. You value freedom and are fearless in pursuit of goals."
+        }
+    };
     
-]
-
-        
-
-
-
+    startBtn.addEventListener("click", () => {
+        startScreen.classList.add("hidden");
+        quiz.classList.remove("hidden");
+        loadQuestion();
+    });
+    
+    function loadQuestion() {
+        const current = quizData[currentQuestion];
+        quiz.innerHTML = `<h2>${current.question}</h2>`;
+        current.options.forEach(option => {
+            const button = document.createElement("button");
+            button.classList.add("option");
+            button.textContent = option.text;
+            button.onclick = () => selectOption(option.animal);
+            quiz.appendChild(button);
+        });
+    }
+    
+    function selectOption(animal) {
+        scores[animal]++;
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
+            loadQuestion();
+        } else {
+            showResult();
+        }
+    }
+    
+    function showResult() {
+        const chosenAnimal = scores.Dog > scores.Cat ? "Dog" : "Cat";
+        const info = animalInfo[chosenAnimal];
+    
+        quiz.classList.add("hidden");
+        resultDiv.classList.remove("hidden");
+    
+        resultDiv.innerHTML = `
+            <div class="result-content">
+                <h2>You got ${chosenAnimal}!</h2>
+                <img src="${info.img}" alt="${chosenAnimal}">
+                <p>${info.description}</p>
+                <button id="restart-btn">Start Again</button>
+            </div>
+        `;
+    
+        document.getElementById("restart-btn").addEventListener("click", () => {
+            currentQuestion = 0;
+            scores.Dog = 0;
+            scores.Cat = 0;
+            resultDiv.classList.add("hidden");
+            startScreen.classList.remove("hidden");
+        });
+    }
